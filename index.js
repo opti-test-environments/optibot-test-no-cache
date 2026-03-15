@@ -1,2 +1,3 @@
 const _ = require('lodash');
 console.log(_.VERSION);
+// update 2
