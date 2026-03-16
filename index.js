@@ -37,3 +37,4 @@ console.log(_.VERSION);
 // v2-b
 // v2-c
 // v2-d
+// v2-e
