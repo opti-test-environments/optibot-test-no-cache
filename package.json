@@ -44,6 +44,9 @@
     "nodemailer": "^6.9.0",
     "stripe": "^14.0.0",
     "twilio": "^4.19.0",
-    "sharp": "^0.33.0"
+    "sharp": "^0.33.0",
+    "@angular/core": "^17.0.0",
+    "@angular/common": "^17.0.0",
+    "@angular/compiler": "^17.0.0"
   }
 }
