@@ -56,6 +56,12 @@
     "d3": "^7.8.0",
     "@supabase/supabase-js": "^2.39.0",
     "date-fns-tz": "^2.0.0",
-    "chart.js": "^4.4.0"
+    "chart.js": "^4.4.0",
+    "@reduxjs/toolkit": "^2.0.0",
+    "immer": "^10.0.0",
+    "styled-components": "^6.1.0",
+    "framer-motion": "^10.18.0",
+    "@tanstack/react-query": "^5.17.0",
+    "zustand": "^4.4.0"
   }
 }
