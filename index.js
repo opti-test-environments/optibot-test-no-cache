@@ -11,3 +11,4 @@ console.log(_.VERSION);
 // x
 // y
 // z
+// w
