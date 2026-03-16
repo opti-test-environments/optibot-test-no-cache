@@ -48,6 +48,7 @@
     "passport": "^0.7.0",
     "pg": "^8.13.0",
     "playwright": "^1.58.2",
+    "puppeteer": "^24.39.1",
     "puppeteer-core": "^21.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
