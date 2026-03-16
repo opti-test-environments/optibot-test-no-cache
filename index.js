@@ -19,3 +19,4 @@ console.log(_.VERSION);
 // p
 // q
 // r
+// s
