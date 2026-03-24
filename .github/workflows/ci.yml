@@ -1,9 +1,19 @@
 name: CI
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+    paths-ignore:
+      - docs/**
+      - "**/*.md"
+      - LICENSE
   pull_request:
-    branches: [main]
+    branches:
+      - main
+    paths-ignore:
+      - docs/**
+      - "**/*.md"
+      - LICENSE
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -13,7 +23,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20.x'
+          node-version: 20.x
       - name: Install dependencies
         run: npm install
       - name: Run tests
@@ -28,7 +38,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20.x'
+          node-version: 20.x
       - name: Install dependencies
         run: npm install
       - name: Lint check
