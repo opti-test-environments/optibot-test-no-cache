@@ -4,32 +4,52 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+
+# YAML anchors for reusable steps
+x-cache-deps: &cache-deps
+  name: Cache node_modules
+  uses: actions/cache@v4
+  id: deps-cache
+  with:
+    path: node_modules
+    key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+
+x-install-deps: &install-deps
+  name: Install dependencies
+  if: steps.deps-cache.outputs.cache-hit != 'true'
+  run: npm install
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20.x'
-      - name: Install dependencies
-        run: npm install
+      - <<: *cache-deps
+      - <<: *install-deps
       - name: Run tests
         run: npm test
       - name: Build
         run: npm run build
+
   lint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20.x'
-      - name: Install dependencies
-        run: npm install
+      - <<: *cache-deps
+      - <<: *install-deps
       - name: Lint check
         run: echo "Lint passed"
